@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="px-4 pt-5 my-5 text-center">
+      <h1 class="display-5 fw-bold text-body-emphasis">Word displayed</h1>
+      <div class="col-lg-6 mx-auto">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <!-- <form action="/main" method="GET">
+            <input  class="btn btn-lg px-4 btn-primary"  type="submit" value="START">
+          </form>
+          <form action="/main" method="GET  ">
+            <input  class="btn btn-lg px-4 btn-primary"  type="submit" value="STOP">
+          </form> -->
+          <button type="button" class="btn btn-lg px-4 btn-primary" onclick="changeButton()">START</button>
+        </div>
+      </div>
+      <video></video>
+      <div class="col-lg-6 mx-auto">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+          <!-- <form action="/main" method="GET">
+            <input  class="btn btn-lg px-4 btn-success"  type="submit" value="SUBMIT">
+          </form>
+          <form action="/main" method="GET  ">
+            <input  class="btn btn-lg px-4 btn-danger"  type="submit" value="BACKSPACE">
+          </form> -->
+          <button type="button" class="btn btn-lg px-4 btn-success" onclick="">SUBMIT</button>
+          <button type="button" class="btn btn-lg px-4 btn-danger" onclick="">BACKSPACE</button>
+        </div>
+      </div>
+      
+      <div class="overflow-hidden" style="max-height: 30vh;">
+      </div>
+    </div>
+</body>
