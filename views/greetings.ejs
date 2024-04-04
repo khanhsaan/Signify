@@ -20,40 +20,6 @@
           <video id="video" width="640" height="480" autoplay></video>
           <button id="startButton">Start Camera</button>
           <button id="stopButton">Stop Camera</button>
-
-          <script>
-            document.addEventListener('DOMContentLoaded', function() {
-            const video = document.getElementById('video');
-            const startButton = document.getElementById('startButton');
-            const stopButton = document.getElementById('stopButton');
-            let stream;
-
-            // Function to start the camera
-            async function startCamera() {
-                try {
-                    stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                    video.srcObject = stream;
-                } catch (error) {
-                    console.error('Error accessing camera:', error);
-                }
-            }
-
-            // Function to stop the camera
-            function stopCamera() {
-                if (stream) {
-                    const tracks = stream.getTracks();
-                    tracks.forEach(track => track.stop());
-                    video.srcObject = null;
-                }
-            }
-
-            // Event listener for the start button
-            startButton.addEventListener('click', startCamera);
-
-            // Event listener for the stop button
-            stopButton.addEventListener('click', stopCamera);
-            });
-        </script>
         </div>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
           <!-- <form action="/main" method="GET">
@@ -70,4 +36,37 @@
       <div class="overflow-hidden" style="max-height: 30vh;">
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('video');
+      const startButton = document.getElementById('startButton');
+      const stopButton = document.getElementById('stopButton');
+      let stream;
+
+      // Function to start the camera
+      async function startCamera() {
+          try {
+              stream = await navigator.mediaDevices.getUserMedia({ video: true });
+              video.srcObject = stream;
+          } catch (error) {
+              console.error('Error accessing camera:', error);
+          }
+      }
+
+      // Function to stop the camera
+      function stopCamera() {
+          if (stream) {
+              const tracks = stream.getTracks();
+              tracks.forEach(track => track.stop());
+              video.srcObject = null;
+          }
+      }
+
+      // Event listener for the start button
+      startButton.addEventListener('click', startCamera);
+
+      // Event listener for the stop button
+      stopButton.addEventListener('click', stopCamera);
+      });
+    </script>
 </body>
